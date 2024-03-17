@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glossy/glossy.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:seequenze_task/widgets/home_page.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -113,62 +114,80 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.04,
                     ),
-                    Container(
-                      height: height * 0.055,
-                      width: width * 0.55,
-                      decoration: BoxDecoration(
-                          boxShadow: const [
-                            BoxShadow(
-                                blurRadius: 15,
-                                offset: Offset(2, 2),
-                                spreadRadius: -2,
-                                color: Color.fromARGB(0, 0, 0, 65))
-                          ],
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color.fromARGB(77, 43, 26, 1),
-                              Color.fromARGB(167, 116, 90, 1),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePage(),
+                            ));
+                      },
+                      child: Container(
+                        height: height * 0.055,
+                        width: width * 0.55,
+                        decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                  blurRadius: 15,
+                                  offset: Offset(2, 2),
+                                  spreadRadius: -2,
+                                  color: Color.fromARGB(0, 0, 0, 65))
                             ],
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color.fromARGB(77, 43, 26, 1),
+                                Color.fromARGB(167, 116, 90, 1),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(33)),
+                        child: Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontFamily: GoogleFonts.inter().fontFamily,
+                                fontWeight: FontWeight.w400),
                           ),
-                          borderRadius: BorderRadius.circular(33)),
-                      child: Center(
-                        child: Text(
-                          'Login',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontFamily: GoogleFonts.inter().fontFamily,
-                              fontWeight: FontWeight.w400),
                         ),
                       ),
                     ),
                     SizedBox(
                       height: height * 0.04,
                     ),
-                    Container(
-                      height: height * 0.055,
-                      width: width * 0.55,
-                      decoration: BoxDecoration(
-                          boxShadow: const [
-                            BoxShadow(
-                                blurRadius: 15,
-                                offset: Offset(2, 2),
-                                spreadRadius: 0,
-                                color: Color.fromARGB(0, 0, 0, 65))
-                          ],
-                          border: Border.all(
-                            width: 1,
-                            color: Color.fromARGB(246, 207, 203, 203),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomePage(),
+                            ));
+                      },
+                      child: Container(
+                        height: height * 0.055,
+                        width: width * 0.55,
+                        decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                  blurRadius: 15,
+                                  offset: Offset(2, 2),
+                                  spreadRadius: 0,
+                                  color: Color.fromARGB(0, 0, 0, 65))
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color.fromARGB(246, 207, 203, 203),
+                            ),
+                            borderRadius: BorderRadius.circular(33)),
+                        child: Center(
+                          child: Text(
+                            'Signup',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontFamily: GoogleFonts.inter().fontFamily,
+                                fontWeight: FontWeight.w400),
                           ),
-                          borderRadius: BorderRadius.circular(33)),
-                      child: Center(
-                        child: Text(
-                          'Signup',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontFamily: GoogleFonts.inter().fontFamily,
-                              fontWeight: FontWeight.w400),
                         ),
                       ),
                     ),
