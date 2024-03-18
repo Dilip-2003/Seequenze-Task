@@ -409,6 +409,7 @@ class _ItemDescriptionScreenState extends State<ItemDescriptionScreen> {
   }
 }
 
+// ignore: must_be_immutable
 class CustomColumn extends StatelessWidget {
   CustomColumn({super.key, required this.title1, required this.url1});
 

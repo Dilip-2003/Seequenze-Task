@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:glossy/glossy.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const FirstPart(),
+                    FirstPart(),
                     SizedBox(height: height * 0.01),
                     SecondPart(width: width),
                     SizedBox(height: height * 0.04),
@@ -59,6 +61,79 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30, bottom: 10),
+                child: GlossyContainer(
+                  height: height * 0.09,
+                  width: width * 0.8,
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(214, 51, 51, 51),
+                  opacity: 0.5,
+                  boxShadow: const [
+                    BoxShadow(
+                        blurRadius: 4,
+                        spreadRadius: 0,
+                        offset: Offset(0, 4),
+                        color: Color.fromARGB(63, 0, 0, 0))
+                  ],
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(1, 45, 45, 45),
+                              border: Border.all(
+                                  width: 1,
+                                  color: const Color.fromARGB(1, 94, 94, 94)),
+                              boxShadow: const [
+                                BoxShadow(
+                                    blurRadius: 4,
+                                    spreadRadius: -2,
+                                    offset: Offset(0, 2),
+                                    color: Color.fromARGB(40, 255, 255, 255))
+                              ],
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Image.asset(
+                            'assets/images/home.png',
+                            height: 25,
+                            width: 25,
+                          ),
+                        ),
+                        Image.asset(
+                          'assets/images/contact.png',
+                          height: 30,
+                          width: 30,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          'assets/images/fill_1.png',
+                          height: 30,
+                          width: 30,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          'assets/images/group_3.png',
+                          height: 55,
+                          width: 30,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          'assets/images/Vector.png',
+                          height: 30,
+                          width: 30,
+                          fit: BoxFit.cover,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -80,7 +155,7 @@ class FirstPart extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.only(left: width * 0.04, top: height * 0.03),
+      padding: EdgeInsets.only(left: width * 0.04, top: height * 0.05),
       child: Row(
         children: [
           const Text(
