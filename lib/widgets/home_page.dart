@@ -296,7 +296,7 @@ class ThirdPart extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: height * 0.02),
-            height: height * 0.32,
+            height: height * 0.3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
@@ -316,7 +316,7 @@ class ThirdPart extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(horizontal: width * 0.02),
                     child: GlossyContainer(
-                      height: height * 0.3,
+                      height: height * 0.35,
                       width: width * 0.5,
                       opacity: 0.1,
                       color: Colors.grey.shade100,
@@ -358,7 +358,7 @@ class ThirdPart extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: width * 0.38,
-                                height: height * 0.045,
+                                height: height * 0.047,
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -463,7 +463,7 @@ class FourthPart extends StatelessWidget {
                       right: height * 0.03,
                       top: height * 0.01),
                   child: GlossyContainer(
-                    height: height * 0.18,
+                    height: height * 0.19,
                     width: width,
                     borderRadius: BorderRadius.circular(5),
                     child: Row(

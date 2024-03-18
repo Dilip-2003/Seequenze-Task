@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
               left: width * 0.10,
               top: height * 0.10,
               child: GlossyContainer(
-                height: height * 0.8,
+                height: height * 0.85,
                 width: width * 0.8,
                 opacity: 0.1,
                 borderRadius: BorderRadius.circular(17),

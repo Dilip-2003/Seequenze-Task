@@ -37,12 +37,12 @@ class _ItemDescriptionScreenState extends State<ItemDescriptionScreen> {
                 children: [
                   Image.asset(
                     'assets/images/coffee3.png',
-                    height: height * 0.40,
+                    height: height * 0.35,
                     width: width,
                     fit: BoxFit.cover,
                   ),
                   GlossyContainer(
-                    height: height * 0.6,
+                    height: height * 0.65,
                     width: width,
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(25),
@@ -94,13 +94,11 @@ class _ItemDescriptionScreenState extends State<ItemDescriptionScreen> {
                                 ],
                               ),
                               Container(
-                                height: height * 0.06,
+                                height: height * 0.075,
                                 width: width * 0.2,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10)),
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 3),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
