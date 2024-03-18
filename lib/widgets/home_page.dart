@@ -16,27 +16,27 @@ class HomePage extends StatelessWidget {
     int a3 = (0.38 * 255).round();
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: height,
-          width: width,
-          child: Stack(
-            children: [
-              Image.asset(
-                'assets/images/login_background.jpeg',
-                fit: BoxFit.cover,
-                height: height,
-                width: width,
-              ),
-              GlossyContainer(
-                height: height,
-                width: width,
-                border: Border.all(width: 1),
-                gradient: GlossyLinearGradient(colors: [
-                  Color.fromARGB(a1, 255, 255, 255),
-                  Color.fromARGB(a2, 255, 255, 255),
-                  Color.fromARGB(a3, 255, 255, 255)
-                ], opacity: 0.1),
+      body: SizedBox(
+        height: height,
+        width: width,
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/login_background.jpeg',
+              fit: BoxFit.cover,
+              height: height,
+              width: width,
+            ),
+            GlossyContainer(
+              height: height,
+              width: width,
+              border: Border.all(width: 1),
+              gradient: GlossyLinearGradient(colors: [
+                Color.fromARGB(a1, 255, 255, 255),
+                Color.fromARGB(a2, 255, 255, 255),
+                Color.fromARGB(a3, 255, 255, 255)
+              ], opacity: 0.1),
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
                     const FirstPart(),
@@ -58,41 +58,10 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Color.fromARGB(214, 51, 51, 51),
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: CircleAvatar(
-      //         radius: 20,
-      //         backgroundColor: Color.fromARGB(1, 45, 45, 45),
-      //         child: Image.asset(
-      //           'assets/images/home.png',
-      //           height: height * 0.03,
-      //         ),
-      //       ),
-      //       label: '',
-      //       backgroundColor: Color.fromARGB(1, 45, 45, 45),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.search),
-      //       label: '',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.notifications),
-      //       label: '',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_circle),
-      //       label: '',
-      //     ),
-      //   ],
-      //   selectedItemColor: Colors.blue,
-      //   unselectedItemColor: Colors.grey,
-      // ),
     );
   }
 }
@@ -399,148 +368,134 @@ class FourthPart extends StatelessWidget {
     ];
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    return Flexible(
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              physics: const BouncingScrollPhysics(),
-              itemCount: imgUrls.length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ItemDescriptionScreen(
-                              imgUrls: imgUrls[index], title: 'Lattè'),
-                        ));
-                  },
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                            left: height * 0.03,
-                            right: height * 0.03,
-                            top: height * 0.01),
-                        child: GlossyContainer(
-                          height: height * 0.18,
-                          width: width,
-                          borderRadius: BorderRadius.circular(5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      children: [
+        ...imgUrls.map((e) {
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ItemDescriptionScreen(imgUrls: e, title: 'Lattè'),
+                  ));
+            },
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      left: height * 0.03,
+                      right: height * 0.03,
+                      top: height * 0.01),
+                  child: GlossyContainer(
+                    height: height * 0.18,
+                    width: width,
+                    borderRadius: BorderRadius.circular(5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: width * 0.55,
+                          padding: EdgeInsets.only(top: height * 0.01),
+                          child: Column(
                             children: [
-                              Container(
-                                width: width * 0.55,
-                                padding: EdgeInsets.only(top: height * 0.01),
-                                child: Column(
+                              Text(
+                                'Lattè',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontFamily: GoogleFonts.inter().fontFamily,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey),
+                              ),
+                              SizedBox(
+                                width: width * 0.35,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      'Lattè',
+                                      '4.9 ' + ' ⭐ ' + '(458)',
                                       style: TextStyle(
-                                          fontSize: 18,
-                                          fontFamily:
-                                              GoogleFonts.inter().fontFamily,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.grey),
-                                    ),
-                                    SizedBox(
-                                      width: width * 0.35,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text(
-                                            '4.9 ' + ' ⭐ ' + '(458)',
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w300,
-                                              fontFamily: GoogleFonts.inter()
-                                                  .fontFamily,
-                                            ),
-                                          ),
-                                          Image.asset(
-                                            'assets/images/veg_symbol.png',
-                                            height: height * 0.03,
-                                            width: width * 0.04,
-                                          ),
-                                        ],
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily:
+                                            GoogleFonts.inter().fontFamily,
                                       ),
                                     ),
-                                    Container(
-                                      margin:
-                                          EdgeInsets.only(left: width * 0.1),
-                                      child: Text(
-                                        'Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.',
-                                        style: TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.w300,
-                                            fontFamily:
-                                                GoogleFonts.inter().fontFamily,
-                                            color: Colors.grey),
-                                      ),
-                                    )
+                                    Image.asset(
+                                      'assets/images/veg_symbol.png',
+                                      height: height * 0.03,
+                                      width: width * 0.04,
+                                    ),
                                   ],
                                 ),
                               ),
-                              Stack(
-                                children: [
-                                  Container(
-                                    // height: height * 0.11,
-                                    margin:
-                                        EdgeInsets.only(right: width * 0.04),
-                                    decoration: const BoxDecoration(boxShadow: [
-                                      BoxShadow(
-                                          blurRadius: 4,
-                                          spreadRadius: -1,
-                                          offset: Offset(2, 2),
-                                          color: Color.fromARGB(51, 0, 0, 0))
-                                    ]),
-                                    child: Image.asset(
-                                      imgUrls[index],
-                                      height: height * 0.1,
-                                      width: width * 0.2,
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 0,
-                                    left: width * 0.036,
-                                    child: Container(
-                                      width: width * 0.12,
-                                      height: height * 0.023,
-                                      decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: Center(
-                                        child: Text(
-                                          'ADD',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontFamily: GoogleFonts.inter()
-                                                  .fontFamily,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: width * 0.1),
+                                child: Text(
+                                  'Caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top.',
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w300,
+                                      fontFamily:
+                                          GoogleFonts.inter().fontFamily,
+                                      color: Colors.grey),
+                                ),
+                              )
                             ],
                           ),
                         ),
-                      )
-                    ],
+                        Stack(
+                          children: [
+                            Container(
+                              // height: height * 0.11,
+                              margin: EdgeInsets.only(right: width * 0.04),
+                              decoration: const BoxDecoration(boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 4,
+                                    spreadRadius: -1,
+                                    offset: Offset(2, 2),
+                                    color: Color.fromARGB(51, 0, 0, 0))
+                              ]),
+                              child: Image.asset(
+                                e,
+                                height: height * 0.1,
+                                width: width * 0.2,
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: width * 0.036,
+                              child: Container(
+                                width: width * 0.12,
+                                height: height * 0.023,
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Center(
+                                  child: Text(
+                                    'ADD',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontFamily:
+                                            GoogleFonts.inter().fontFamily,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                );
-              },
+                )
+              ],
             ),
-          ),
-        ],
-      ),
+          );
+        }).toList(),
+      ],
     );
   }
 }
